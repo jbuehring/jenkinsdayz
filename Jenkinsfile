@@ -8,37 +8,6 @@ pipeline {
         echo "${TEST_USER_PSW}"
       }
     }
-    stage('Testing') {
-      failFast true
-      parallel {
-        stage('Java 7') {
-          agent {
-            docker {
-              image 'openjdk:7-jdk-alpine'
-              label 'docker-j7'
-            }
-            
-          }
-          steps {
-            sh 'java -version'
-            sleep(time: 10, unit: 'SECONDS')
-          }
-        }
-        stage('Java 8') {
-          agent {
-            docker {
-              image 'openjdk:8-jdk-alpine'
-              label 'docker-j8'
-            }
-            
-          }
-          steps {
-            sh 'java -version'
-            sleep(time: 20, unit: 'SECONDS')
-          }
-        }
-      }
-    }
   }
   environment {
     MY_NAME = 'Mud'
