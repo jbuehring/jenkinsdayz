@@ -10,7 +10,7 @@ pipeline {
     }
   }
   environment {
-    MY_NAME = 'Mud'
+    MY_NAME = 'James'
     TEST_USER = credentials('test-user')
   }
   post {
