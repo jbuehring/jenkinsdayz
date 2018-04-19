@@ -13,7 +13,10 @@ pipeline {
       parallel {
         stage('Java 7') {
           agent {
-            docker 'openjdk:7-jdk-alpine'
+            docker {
+              image 'openjdk:7-jdk-alpine'
+            }
+            
           }
           steps {
             sh 'java -version'
@@ -22,7 +25,10 @@ pipeline {
         }
         stage('Java 8') {
           agent {
-            docker 'openjdk:8-jdk-alpine'
+            docker {
+              image 'openjdk:8-jdk-alpine'
+            }
+            
           }
           steps {
             sh 'java -version'
