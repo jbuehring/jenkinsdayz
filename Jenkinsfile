@@ -15,7 +15,7 @@ pipeline {
           agent {
             docker {
               image 'openjdk:7-jdk-alpine'
-              label 'docker-cloud'
+              label 'docker-j7'
             }
             
           }
@@ -28,7 +28,7 @@ pipeline {
           agent {
             docker {
               image 'openjdk:8-jdk-alpine'
-              label 'docker-cloud'
+              label 'docker-j8'
             }
             
           }
